@@ -1,6 +1,6 @@
 #! /bin/sh
 
-#CONF_URL=${CONF_URL:=https://git.hb.dfki.de/bkisliuk/esrocos_taste_autoproj.git}
+CONF_URL=${CONF_URL:=https://git.hb.dfki.de/bkisliuk/esrocos_taste_autoproj.git}
 
 RUBY=ruby
 AUTOPROJ_BOOTSTRAP_URL=http://rock-robotics.org/master/autoproj_bootstrap
@@ -62,28 +62,28 @@ if ! test -f $PWD/autoproj_bootstrap; then
     $DOWNLOADER $AUTOPROJ_BOOTSTRAP_URL
 fi
 
-# DECIDES HOW TO DOWNLOAD ROCK STUFF
+# DECIDES HOW TO DOWNLOAD STUFF
 
-#CONF_URL=${CONF_URL#*//}
-#CONF_SITE=${CONF_URL%%/*}
-#CONF_REPO=${CONF_URL#*/}
+CONF_URL=${CONF_URL#*//}
+CONF_SITE=${CONF_URL%%/*}
+CONF_REPO=${CONF_URL#*/}
 
-#PUSH_TO=git@$CONF_SITE:$CONF_REPO
-#until [ -n "$GET_REPO" ]
-#do
-#    echo -n "Which protocol do you want to use to access $CONF_REPO on $CONF_SITE? [git|ssh|http] (default: http) "
-#    read ANSWER
-#    ANSWER=`echo $ANSWER | tr "[:upper:]" "[:lower:]"`
-#    case "$ANSWER" in
-#        "ssh") GET_REPO=git@$CONF_SITE:$CONF_REPO ;;
-#        "http"|"") GET_REPO=https://$CONF_SITE/$CONF_REPO ;;
-#        "git") GET_REPO=git://$CONF_SITE/$CONF_REPO ;;
-#    esac
-#done
+PUSH_TO=git@$CONF_SITE:$CONF_REPO
+until [ -n "$GET_REPO" ]
+do
+    echo -n "Which protocol do you want to use to access $CONF_REPO on $CONF_SITE? [git|ssh|http] (default: http) "
+    read ANSWER
+    ANSWER=`echo $ANSWER | tr "[:upper:]" "[:lower:]"`
+    case "$ANSWER" in
+        "ssh") GET_REPO=git@$CONF_SITE:$CONF_REPO ;;
+        "http"|"") GET_REPO=https://$CONF_SITE/$CONF_REPO ;;
+        "git") GET_REPO=git://$CONF_SITE/$CONF_REPO ;;
+    esac
+done
 
 # DOWNLOAD ROCK STUFF
 
-$RUBY autoproj_bootstrap $@ #git $GET_REPO push_to=$PUSH_TO $BOOTSTRAP_ARGS
+$RUBY autoproj_bootstrap $@ git $GET_REPO push_to=$PUSH_TO $BOOTSTRAP_ARGS
 
 # SOURCE Autoproj envs, update, resolve dependencies and build (rock, obviously)
 
