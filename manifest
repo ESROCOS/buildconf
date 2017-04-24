@@ -1,11 +1,5 @@
 package_sets:
 
-- github: ESROCOS/types-sensor_samples
-
-- github: ESROCOS/types-drivers
-
-- github: ESROCOS/types-core
- 
-- github: ESROCOS/types-base
+- gitlab: bkisliuk/esrocos_types_package-set
 
 layout:
