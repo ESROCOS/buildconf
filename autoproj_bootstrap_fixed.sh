@@ -1,6 +1,6 @@
 #! /bin/sh
 
-CONF_URL=${CONF_URL:=https://git.hb.dfki.de/bkisliuk/esrocos_taste_autoproj.git}
+CONF_URL=${CONF_URL:=https://git.hb.dfki.de/bkisliuk/esrocos_types_buildconf.git}
 
 RUBY=ruby
 AUTOPROJ_BOOTSTRAP_URL=http://rock-robotics.org/master/autoproj_bootstrap
