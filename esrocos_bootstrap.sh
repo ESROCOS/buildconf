@@ -87,6 +87,8 @@ $RUBY autoproj_bootstrap $@ git $GET_REPO push_to=$PUSH_TO $BOOTSTRAP_ARGS
 
 # SOURCE Autoproj envs, update, resolve dependencies and build (rock, obviously)
 
+mkdir -p ./taste
+
 if test "x$@" != "xlocaldev"; then
     $SHELL -c '. $PWD/env.sh; autoproj update; autoproj osdeps; autoproj fast-build'
 fi
