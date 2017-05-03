@@ -71,12 +71,12 @@ CONF_REPO=${CONF_URL#*/}
 PUSH_TO=git@$CONF_SITE:$CONF_REPO
 until [ -n "$GET_REPO" ]
 do
-    echo -n "Which protocol do you want to use to access $CONF_REPO on $CONF_SITE? [git|ssh|http] (default: http) "
+    echo -n "Which protocol do you want to use to access $CONF_REPO on $CONF_SITE? [git|ssh|http] (default: ssh) "
     read ANSWER
     ANSWER=`echo $ANSWER | tr "[:upper:]" "[:lower:]"`
     case "$ANSWER" in
-        "ssh") GET_REPO=git@$CONF_SITE:$CONF_REPO ;;
-        "http"|"") GET_REPO=https://$CONF_SITE/$CONF_REPO ;;
+        "ssh"|"") GET_REPO=git@$CONF_SITE:$CONF_REPO ;;
+        "http") GET_REPO=https://$CONF_SITE/$CONF_REPO ;;
         "git") GET_REPO=git://$CONF_SITE/$CONF_REPO ;;
     esac
 done
