@@ -1,6 +1,6 @@
 #! /bin/sh
 
-CONF_URL=${CONF_URL:=https://git.hb.dfki.de/bkisliuk/esrocos_types_buildconf.git}
+CONF_URL=${CONF_URL:=https://github.com/ESROCOS/build-conf.git}
 
 RUBY=ruby
 AUTOPROJ_BOOTSTRAP_URL=http://rock-robotics.org/master/autoproj_bootstrap
@@ -85,9 +85,9 @@ done
 
 $RUBY autoproj_bootstrap $@ git $GET_REPO push_to=$PUSH_TO $BOOTSTRAP_ARGS
 
-# SOURCE Autoproj envs, update, resolve dependencies and build (rock, obviously)
+# SOURCE Autoproj envs, update, resolve dependencies and build
 
-mkdir -p ./taste
+mkdir ./taste -p
 
 if test "x$@" != "xlocaldev"; then
     $SHELL -c '. $PWD/env.sh; autoproj update; autoproj osdeps; autoproj fast-build'
