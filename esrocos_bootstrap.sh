@@ -87,10 +87,11 @@ $RUBY autoproj_bootstrap $@ git $GET_REPO push_to=$PUSH_TO $BOOTSTRAP_ARGS
 
 # SOURCE Autoproj envs, update, resolve dependencies and build
 
-mkdir ./taste -p
+mkdir ./esrocos-types -p
 
 if test "x$@" != "xlocaldev"; then
-    $SHELL -c '. $PWD/env.sh; autoproj update; autoproj osdeps; autoproj fast-build'
+    $SHELL -c '. $PWD/env.sh;'
+    $SHELL -c 'PYTHONPATH=/home/assert/.local/lib/python3.4/site-packages'
+    $SHELL -c 'autoproj update; autoproj osdeps'
 fi
-
 
