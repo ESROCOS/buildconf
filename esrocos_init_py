@@ -7,6 +7,9 @@ import sys
 import subprocess
 from subprocess import call 
 from os import walk
+from shutil import copyfile
+
+copyfile(src, dst)
 
 ESROCOS_YAML = "esrocos.yml"
 DEFAULT_PROJECT_NAME = "esrocos_project"
@@ -141,8 +144,26 @@ call(mono_args)
 
 print"DONE"
 #INSTALLING DEPENDENCY TYPES
+print "installing shared types...\t", 
+sys.stdout.flush()
 
-  #FOR EACH DEPENDENCY, COMPILE ALL ASN/ACN FILES INTO A SINGLE AADL AND COPY THAT FILE INTO THE ./install FOLDER
+SHARED_DIR = "../esrocos_shared_types/"
+
+aadl_files = []
+f = []
+ 
+for (dirpath, dirnames, filenames) in walk(SHARED_DIR):
+  f.extend(filenames)
+  break
+
+
+for filename in f 
+  try 
+    copyfile(filename,INSTALL_DIR)
+  except IOError err
+    raise err
+
+print "DONE"
 
 #GENERATE DATA VIEW
 print "generate data view files...\t", 
