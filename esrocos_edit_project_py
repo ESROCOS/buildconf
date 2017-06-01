@@ -41,10 +41,10 @@ iv_args = ["--load-interface-view"]
 dp_args = ["--load-deployment-view"]
 al_args = ["--aadl-library"]
 
-#EXTEND ARGUMENTS WITH FILES NAMES
+#EXTEND ARGUMENTS WITH FILE NAMES
   # DATA VIEW
 
-dv_files = []
+dv_files = ""
 f = []
 
 for (dirpath, dirnames, filenames) in walk(INSTALLED_DIR):
@@ -54,15 +54,14 @@ for (dirpath, dirnames, filenames) in walk(INSTALLED_DIR):
 for filename in f:
   path = ""
   if filename.endswith(".aadl"):
-    path = path + os.getcwd() + "/" + INSTALLED_DIR + filename 
-    dv_files.append(path)
+    dv_files = dv_files + os.getcwd() + "/" + INSTALLED_DIR + filename+ ","
 
-dv_args.extend(dv_files)
+dv_files = dv_files[:-1]
+dv_args.append(dv_files)
 
   # INTERFACE VIEW
 
 iv_args.append(PROJECT_NAME+"_iv.aadl")
-
 
   # DEPLOYMENT VIEW
 
@@ -80,9 +79,9 @@ taste_arguments.extend(iv_args)
 taste_arguments.extend(dp_args)
 taste_arguments.extend(al_args)
 
+print taste_arguments
+
 print "opening TASTE GUI...\t",
 sys.stdout.flush()  
 
 call(taste_arguments)
-
-
