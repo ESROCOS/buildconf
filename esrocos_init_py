@@ -9,8 +9,6 @@ from subprocess import call
 from os import walk
 from shutil import copyfile
 
-copyfile(src, dst)
-
 ESROCOS_YAML = "esrocos.yml"
 DEFAULT_PROJECT_NAME = "esrocos_project"
 SRC_DIR = "dataview/"
@@ -157,10 +155,10 @@ for (dirpath, dirnames, filenames) in walk(SHARED_DIR):
   break
 
 
-for filename in f 
-  try 
-    copyfile(filename,INSTALL_DIR)
-  except IOError err
+for filename in f:
+  try:
+    copyfile(SHARED_DIR+filename,INSTALL_DIR+filename)
+  except IOError as err:
     raise err
 
 print "DONE"
