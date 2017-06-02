@@ -83,7 +83,7 @@ done
 
 # DOWNLOAD ROCK STUFF
 
-$RUBY autoproj_bootstrap $@ git $GET_REPO push_to=$PUSH_TO $BOOTSTRAP_ARGS
+$RUBY autoproj_bootstrap $@ git $GET_REPO push_to=$PUSH_TO $BOOTSTRAP_ARGS branch=monolithic_types_aadl
 
 # SOURCE Autoproj envs, update, resolve dependencies and build
 
