@@ -59,7 +59,6 @@ for filename in f:
 dv_files = dv_files[:-1]
 dv_args.append(dv_files)
 
-
   # INTERFACE VIEW
 
 iv_args.append(PROJECT_NAME+"_iv.aadl")
@@ -86,5 +85,3 @@ print "opening TASTE GUI...\t",
 sys.stdout.flush()  
 
 call(taste_arguments)
-
-
