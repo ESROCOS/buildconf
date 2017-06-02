@@ -89,7 +89,7 @@ $RUBY autoproj_bootstrap $@ git $GET_REPO push_to=$PUSH_TO $BOOTSTRAP_ARGS branc
 
 #mkdir ./esrocos-types -p
 
-'export PYTHONPATH=/home/assert/.local/lib/python3.4/site-packages' >> env.sh
+#echo 'export PYTHONPATH=/home/assert/.local/lib/python3.4/site-packages' >> env.sh
 
 if test "x$@" != "xlocaldev"; then
     $SHELL -c '. $PWD/env.sh;'
