@@ -1,7 +1,6 @@
 package_sets:
 
 - github: ESROCOS/types_package_set
-  branch: monolithic_types_aadl
 
 - github: ESROCOS/universe
 
