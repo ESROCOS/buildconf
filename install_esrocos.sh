@@ -69,6 +69,7 @@ CONF_SITE=${CONF_URL%%/*}
 CONF_REPO=${CONF_URL#*/}
 
 PUSH_TO=git@$CONF_SITE:$CONF_REPO
+
 until [ -n "$GET_REPO" ]
 do
     echo -n "Which protocol do you want to use to access $CONF_REPO on $CONF_SITE? [git|ssh|http] (default: ssh) "
@@ -81,9 +82,24 @@ do
     esac
 done
 
-# DOWNLOAD ROCK STUFF
+# DECIDES HOW TO DOWNLOAD STUFF
 
-$RUBY autoproj_bootstrap $@ git $GET_REPO push_to=$PUSH_TO $BOOTSTRAP_ARGS branch=monolithic_types_aadl
+BRANCH=""
+
+until [ -n "$BRANCH" ]
+do
+    echo -n "Which version do you want to install? [master|monolithicasn] (default: master) "
+    read ANSWER
+    ANSWER=`echo $ANSWER | tr "[:upper:]" "[:lower:]"`
+    case "$ANSWER" in
+        "master"|"") BRANCH="master" ;;
+        "monolithic") BRANCH="monolithic_types_aadl" ;;
+    esac
+done
+
+# DOWNLOAD AUTOPROJ STUFF
+
+$RUBY autoproj_bootstrap $@ git $GET_REPO push_to=$PUSH_TO $BOOTSTRAP_ARGS branch=$BRANCH
 
 # SOURCE Autoproj envs, update, resolve dependencies and build
 
