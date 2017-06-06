@@ -1,6 +1,6 @@
 package_sets:
 
-- github: ESROCOS/types_package_set
+- github: ESROCOS/core_package_set
 
 - github: ESROCOS/universe
 
