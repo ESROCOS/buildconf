@@ -30,6 +30,6 @@ Autoproj.gitorious_server_configuration('GITLAB', 'git.hb.dfki.de', :http_url =>
 
 env_set 'AUTOPROJ_TASTE_ROOT', "$AUTOPROJ_CURRENT_ROOT/taste"
 
-env_set 'PYTHONPATH', "/home/assert/.local/lib/python3.4/site-packages"
+Autoproj.env_set 'PYTHONPATH', "/home/assert/.local/lib/python3.4/site-packages"
 
 Autoproj.env_inherit 'CMAKE_PREFIX_PATH'
