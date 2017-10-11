@@ -28,8 +28,13 @@ Autoproj.gitorious_server_configuration('GITORIOUS', 'gitorious.org')
 Autoproj.gitorious_server_configuration('GITHUB', 'github.com', :http_url => 'https://github.com')
 Autoproj.gitorious_server_configuration('GITLAB', 'git.hb.dfki.de', :http_url => 'https://git.hb.dfki.de')
 
-env_set 'AUTOPROJ_TASTE_ROOT', "$AUTOPROJ_CURRENT_ROOT/taste"
+Autoproj.env_inherit 'CMAKE_PREFIX_PATH'
+
+#env_set 'AUTOPROJ_TASTE_ROOT', "$AUTOPROJ_CURRENT_ROOT/taste"
+
+Autoproj.env_set 'PKG_CONFIG_PATH', "$AUTOPROJ_CURRENT_ROOT/install/pkgconfig"
 
 Autoproj.env_set 'PYTHONPATH', "/home/assert/.local/lib/python3.4/site-packages:/home/taste/.local/lib/python3.5/site-packages"
 
-Autoproj.env_inherit 'CMAKE_PREFIX_PATH'
+
+
