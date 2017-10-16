@@ -1,0 +1,6 @@
+#opencv:
+#    debian:
+#        default: libopencv-dev
+pyyaml:
+    pip:
+        PyYAML

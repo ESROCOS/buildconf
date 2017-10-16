@@ -1,7 +1,8 @@
 package_sets:
 
-- github: ESROCOS/core_package_set
+- github: ESROCOS/package_set-core
+  branch: monolithic_asn
 
-- github: ESROCOS/universe
+- github: ESROCOS/package_set-universe
 
 layout:

@@ -92,12 +92,12 @@ BRANCH=""
 
 until [ -n "$BRANCH" ]
 do
-    echo -n "Which version do you want to install? [master|monolithic] (default: master) "
+    echo -n "Which version do you want to install? [master|monolithic] (default: monolithic) "
     read ANSWER
     ANSWER=`echo $ANSWER | tr "[:upper:]" "[:lower:]"`
     case "$ANSWER" in
-        "master"|"") BRANCH="master" ;;
-        "monolithic") BRANCH="monolithic_asn" ;;
+        "master") BRANCH="master" ;;
+        "monolithic"|"") BRANCH="monolithic_asn" ;;
     esac
 done
 
