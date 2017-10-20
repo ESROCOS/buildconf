@@ -30,8 +30,6 @@ Autoproj.gitorious_server_configuration('GITLAB', 'git.hb.dfki.de', :http_url =>
 
 Autoproj.env_inherit 'CMAKE_PREFIX_PATH'
 
-#env_set 'AUTOPROJ_TASTE_ROOT', "$AUTOPROJ_CURRENT_ROOT/taste"
-
 Autoproj.env_set 'PKG_CONFIG_PATH', "$AUTOPROJ_CURRENT_ROOT/install/pkgconfig"
 
 Autoproj.env_set 'CPLUS_INCLUDE_PATH', "$AUTOPROJ_CURRENT_ROOT/install/include"
@@ -42,6 +40,9 @@ Autoproj.env_set 'CPATH', "$AUTOPROJ_CURRENT_ROOT/install/include"
 
 Autoproj.env_set 'PYTHONPATH', "/home/assert/.local/lib/python3.4/site-packages:/home/taste/.local/lib/python3.5/site-packages"
 
+var = ENV["AUTOPROJ_CURRENT_ROOT"]+"/autoproj/esrocos.cmake"
+
+Autoproj.env_set 'ESROCOS_CMAKE', var
 
 def esrocos_package(name, workspace: Autoproj.workspace)
     package_common(:cmake, name, workspace: workspace) do |pkg|
