@@ -7,3 +7,4 @@ package_sets:
   branch: master
   
 layout:
+  - esrocos.core

@@ -34,6 +34,12 @@ Autoproj.env_inherit 'CMAKE_PREFIX_PATH'
 
 Autoproj.env_set 'PKG_CONFIG_PATH', "$AUTOPROJ_CURRENT_ROOT/install/pkgconfig"
 
+Autoproj.env_set 'CPLUS_INCLUDE_PATH', "$AUTOPROJ_CURRENT_ROOT/install/include"
+
+Autoproj.env_set 'C_INCLUDE_PATH', "$AUTOPROJ_CURRENT_ROOT/install/include"
+
+Autoproj.env_set 'CPATH', "$AUTOPROJ_CURRENT_ROOT/install/include"
+
 Autoproj.env_set 'PYTHONPATH', "/home/assert/.local/lib/python3.4/site-packages:/home/taste/.local/lib/python3.5/site-packages"
 
 
