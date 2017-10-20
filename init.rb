@@ -43,4 +43,18 @@ Autoproj.env_set 'CPATH', "$AUTOPROJ_CURRENT_ROOT/install/include"
 Autoproj.env_set 'PYTHONPATH', "/home/assert/.local/lib/python3.4/site-packages:/home/taste/.local/lib/python3.5/site-packages"
 
 
+def esrocos_package(name, workspace: Autoproj.workspace)
+    package_common(:cmake, name, workspace: workspace) do |pkg|
+      pkg.depends_on 'cmake'
+      common_make_based_package_setup(pkg)
 
+      yield(pkg) if block_given?
+ 
+      pkg.post_install do
+          Autobuild::Subprocess.run(
+                              pkg, "install",
+                              "esrocos_build_project",
+                              :working_directory => pkg.srcdir)
+      end
+    end    
+end
