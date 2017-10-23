@@ -1,20 +1,10 @@
-INCLUDE(FindPkgConfig)
-
-function(esrocos_init)  
-
-endfunction(esrocos_init)
+  INCLUDE(FindPkgConfig)
+  set(ENV{PKG_CONFIG_PATH} "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig/")
+  set(WRITE_OUT "libs:")
 
 function(esrocos_add_dependency REQ_MODULE)
-  
-  set(ENV{PKG_CONFIG_PATH} "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig/")
  
   pkg_check_modules(LINK_LIBS REQUIRED ${REQ_MODULE})
-
-endfunction(esrocos_add_dependency)
-
-function(esrocos_install_dependency_info)
-
-  set(WRITE_OUT "libs:")
 
   foreach(LIB ${LINK_LIBS_STATIC_LIBRARIES})
   
@@ -39,7 +29,9 @@ function(esrocos_install_dependency_info)
 
   endforeach(LIB)
 
-  #message(${LINK_LIBS_STATIC_LIBRARIES})
+endfunction(esrocos_add_dependency)
+
+function(esrocos_install_dependency_info)
 
   file(WRITE ${CMAKE_BINARY_DIR}/linkings.yml ${WRITE_OUT})
 

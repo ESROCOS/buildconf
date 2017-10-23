@@ -40,9 +40,10 @@ Autoproj.env_set 'CPATH', "$AUTOPROJ_CURRENT_ROOT/install/include"
 
 Autoproj.env_set 'PYTHONPATH', "/home/assert/.local/lib/python3.4/site-packages:/home/taste/.local/lib/python3.5/site-packages"
 
-var = ENV["AUTOPROJ_CURRENT_ROOT"]+"/autoproj/esrocos.cmake"
+Autoproj.env_set 'ESROCOS_TEMPLATES', ENV["AUTOPROJ_CURRENT_ROOT"]+"/autoproj/esrocos.cmake"
 
-Autoproj.env_set 'ESROCOS_CMAKE', var
+#var = ENV["AUTOPROJ_CURRENT_ROOT"]+"/autoproj/esrocos.cmake"
+Autoproj.env_set 'ESROCOS_CMAKE', ENV["AUTOPROJ_CURRENT_ROOT"]+"/autoproj/esrocos.cmake"
 
 def esrocos_package(name, workspace: Autoproj.workspace)
     package_common(:cmake, name, workspace: workspace) do |pkg|
