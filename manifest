@@ -6,5 +6,8 @@ package_sets:
 - github: ESROCOS/package_set-universe
   branch: master
   
+- github: ESROCOS/package_set-external
+  branch: master
+  
 layout:
   - esrocos.core
