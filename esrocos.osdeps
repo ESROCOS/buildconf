@@ -4,3 +4,9 @@
 pyyaml:
     pip:
         PyYAML
+
+control/sdformat:
+    ubuntu:
+        '14.04,14.10,15.04,15.10': nonexistent
+        '16.04': libsdformat4-dev
+
