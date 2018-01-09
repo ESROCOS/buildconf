@@ -91,7 +91,7 @@ function(esrocos_asn1_types_package NAME)
 
     # Process optional arguments
     set(MODE "ASN1")
-    set(OUTDIR "${CMAKE_CURRENT_BINARY_DIR}/${NAME}")
+    set(ASN1_OUT_DIR "${CMAKE_CURRENT_BINARY_DIR}/${NAME}")
     foreach(ARG ${ARGN})
         if(ARG STREQUAL "ASN1")
             # Set next argument mode to ASN1 file
@@ -112,7 +112,7 @@ function(esrocos_asn1_types_package NAME)
                 list(APPEND IMPORTS ${ARG})
             elseif(MODE STREQUAL "OUTDIR")
                 # Add imported package
-                set(OUTDIR "${CMAKE_CURRENT_BINARY_DIR}/${ARG}")
+                set(ASN1_OUT_DIR "${CMAKE_CURRENT_BINARY_DIR}/${ARG}")
             else()
                 # Unexpected mode
                 message(FATAL_ERROR "Internal error at esrocos_asn1_types_package(${NAME}): wrong mode ${MODE}.")
@@ -131,7 +131,6 @@ function(esrocos_asn1_types_package NAME)
     list(APPEND ASN1_FILES ${ASN1_LOCAL} ${ASN1_IMPORTS})
 
     # Directory to write the output of the ASN.1 compiler (C files)
-    set(ASN1_OUT_DIR ${OUTDIR})
     file(MAKE_DIRECTORY ${ASN1_OUT_DIR})
 
     # Timestamp file
