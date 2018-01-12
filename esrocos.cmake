@@ -164,7 +164,7 @@ function(esrocos_asn1_types_package NAME)
 
     # Target for C compilation; uses stamp file to run dependent targets only if changed
     add_custom_target(
-        ${NAME}_generate_c
+        ${NAME}
         DEPENDS ${NAME}_timestamp
     )
 
@@ -230,4 +230,28 @@ function(esrocos_asn1_types_install NAME)
     endif()
     
 endfunction(esrocos_asn1_types_install)
+
+
+# CMake function to create a target dependency on a library to be 
+# located with pkg-config. It tries to find the library, and applies 
+# the library's include and link options to the target.
+#
+# Syntax:
+#       esrocos_pkgconfig_dependency(<target> [<pkgconfig_dep_1> <pkgconfig_dep_2>...])
+#
+# Where <target> is the name of the CMake library or executable target, 
+# and <pkgconfig_dep_N> are the pkg-config packages on which it depends.
+#   
+function(esrocos_pkgconfig_dependency TAR)
+    foreach(PKG ${ARGN})
+        pkg_search_module(${PKG} REQUIRED ${PKG})
+        if(${PKG}_FOUND)
+            target_link_libraries(${TAR} PUBLIC ${${PKG}_LIBRARIES})
+            target_include_directories(${TAR} PUBLIC ${${PKG}_INCLUDE_DIRS})
+            target_compile_options(${TAR} PUBLIC ${${PKG}_CFLAGS_OTHER})
+        else()
+            message(SEND_ERROR "Cannot find pkg-config package ${PKG} required by ${TAR}.")
+        endif()
+    endforeach()
+endfunction(esrocos_pkgconfig_dependency)
 
