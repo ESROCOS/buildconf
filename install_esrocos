@@ -72,7 +72,6 @@ CONF_URL=${CONF_URL#*//}
 CONF_SITE=${CONF_URL%%/*}
 CONF_REPO=${CONF_URL#*/}
 
-PUSH_TO=git@$CONF_SITE:$CONF_REPO
 
 until [ -n "$GET_REPO" ]
 do
@@ -87,7 +86,7 @@ do
         "git")
 		GET_REPO=git://$CONF_SITE/$CONF_REPO ;;
     esac
-	PUSH_TO = GET_REPO;;	
+    PUSH_TO = GET_REPO	
 done
 
 # DECIDES HOW TO DOWNLOAD STUFF
