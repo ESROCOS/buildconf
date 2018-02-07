@@ -139,7 +139,7 @@ function(esrocos_asn1_types_package NAME)
     # First compilation, needed to build the lists of C files
     if(NOT EXISTS ${NAME}_timestamp)
         execute_process(
-            COMMAND asn1.exe -c -typePrefix asn1Scc -uPER -wordSize 8 -ACN -o ${ASN1_OUT_DIR} -atc ${ASN1_FILES}
+            COMMAND mono $ENV{HOME}/tool-inst/share/asn1scc/asn1.exe -c -typePrefix asn1Scc -uPER -wordSize 8 -ACN -o ${ASN1_OUT_DIR} -atc ${ASN1_FILES}
             RESULT_VARIABLE ASN1SCC_RESULT
         )
 
@@ -156,7 +156,7 @@ function(esrocos_asn1_types_package NAME)
 
     # Command for C compilation; creates timestamp file
     add_custom_command(OUTPUT ${NAME}_timestamp
-        COMMAND asn1.exe -c -typePrefix asn1Scc -uPER -wordSize 8 -ACN -o ${ASN1_OUT_DIR} -atc ${ASN1_FILES}
+        COMMAND mono $ENV{HOME}/tool-inst/share/asn1scc/asn1.exe -c -typePrefix asn1Scc -uPER -wordSize 8 -ACN -o ${ASN1_OUT_DIR} -atc ${ASN1_FILES}
         COMMAND ${CMAKE_COMMAND} -E touch ${NAME}_timestamp
         DEPENDS ${ASN1_FILES}
         COMMENT "Generate header files for: ${ASN1_IMPORTS} ${ASN1_FILES} in ${ASN1_OUT_DIR}"
