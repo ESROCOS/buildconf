@@ -12,3 +12,5 @@ package_sets:
 layout:
   - tools/workflow
   - types/base
+  - control/ilk-compiler
+  - control/ilk-generator
