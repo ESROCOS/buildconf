@@ -29,8 +29,8 @@ layout:
   - control/ilk-generator
 
 #GUI support
-#  - gui/robot_model
-#  - gui/vizkit3d_taste
+  - gui/robot_model
+  - gui/vizkit3d_taste
  
 
 
