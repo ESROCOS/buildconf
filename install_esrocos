@@ -99,7 +99,7 @@ do
     case "$ANSWER" in
         "master"|"") BRANCH="master" ;;
         "stable") BRANCH="stable" ;;
-        *) BRANCH = $ANSWER ;;
+        *) BRANCH=$ANSWER ;;
     esac
 done
 
