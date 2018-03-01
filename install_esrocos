@@ -9,7 +9,6 @@ BOOTSTRAP_ARGS=
 mkdir -p ~/esrocos_workspace
 cd ~/esrocos_workspace
 
-
 # RUBY RUBY RUBY
 
 if test -n "$1" && test "$1" != "dev" && test "$1" != "localdev"; then
@@ -72,18 +71,20 @@ CONF_URL=${CONF_URL#*//}
 CONF_SITE=${CONF_URL%%/*}
 CONF_REPO=${CONF_URL#*/}
 
-PUSH_TO=git@$CONF_SITE:$CONF_REPO
-
 until [ -n "$GET_REPO" ]
 do
     echo -n "Which protocol do you want to use to access $CONF_REPO on $CONF_SITE? [git|ssh|http] (default: ssh) "
     read ANSWER
     ANSWER=`echo $ANSWER | tr "[:upper:]" "[:lower:]"`
     case "$ANSWER" in
-        "ssh"|"") GET_REPO=git@$CONF_SITE:$CONF_REPO ;;
-        "http") GET_REPO=https://$CONF_SITE/$CONF_REPO ;;
-        "git") GET_REPO=git://$CONF_SITE/$CONF_REPO ;;
+        "ssh"|"") 
+		GET_REPO=git@$CONF_SITE:$CONF_REPO ;;
+        "http")
+		GET_REPO=https://$CONF_SITE/$CONF_REPO ;;
+        "git")
+		GET_REPO=git://$CONF_SITE/$CONF_REPO ;;
     esac
+    PUSH_TO=${GET_REPO}	
 done
 
 # DECIDES HOW TO DOWNLOAD STUFF
@@ -92,12 +93,13 @@ BRANCH=""
 
 until [ -n "$BRANCH" ]
 do
-    echo -n "Which version do you want to install? [master|stable] (default: master) "
+    echo -n "Which version do you want to install? [master|stable|<other branch>] (default: master) "
     read ANSWER
     ANSWER=`echo $ANSWER | tr "[:upper:]" "[:lower:]"`
     case "$ANSWER" in
         "master"|"") BRANCH="master" ;;
         "stable") BRANCH="stable" ;;
+        *) BRANCH=$ANSWER ;;
     esac
 done
 
@@ -108,8 +110,6 @@ echo "checking out $BRANCH"
 $RUBY autoproj_bootstrap $@ git $GET_REPO push_to=$PUSH_TO $BOOTSTRAP_ARGS branch=$BRANCH
 
 # SOURCE Autoproj envs, update, resolve dependencies and build
-
-
 
 if test "x$@" != "xlocaldev"; then
     echo "source env.sh"

@@ -10,4 +10,27 @@ package_sets:
   branch: master
   
 layout:
-  - esrocos.core
+
+#esrocos workflow tools
+  - tools/workflow
+
+#esrocos types
+  - types/base
+  - types/core
+  - types/drivers
+  - types/sensor_samples
+  
+#support packages for the types
+#  - types/base_support
+#  - types/sensor_samples_support
+ 
+#ilk support
+  - control/ilk-compiler
+  - control/ilk-generator
+
+#GUI support
+#  - gui/robot_model
+#  - gui/vizkit3d_taste
+ 
+
+
