@@ -21,8 +21,8 @@ layout:
   - types/sensor_samples
   
 #support packages for the types
-#  - types/base_support
-#  - types/sensor_samples_support
+  - types/base_support
+  - types/sensor_samples_support
  
 #ilk support
   - control/ilk-compiler
