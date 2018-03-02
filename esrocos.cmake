@@ -1,6 +1,10 @@
-  INCLUDE(FindPkgConfig)
-  set(ENV{PKG_CONFIG_PATH} "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig/")
-  set(WRITE_OUT "libs:")
+# Additional CMake modules for ESROCOS 
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake_modules")
+
+# PkgConfig
+INCLUDE(FindPkgConfig)
+set(ENV{PKG_CONFIG_PATH} "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig/")
+set(WRITE_OUT "libs:")
   
 function(esrocos_add_dependency REQ_MODULE)
   
