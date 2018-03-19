@@ -14,4 +14,9 @@ In this repository all the neccessary files are stored to build an esrocos envir
   * A directory "~/esrocos_workspace" will be created 
   * There you will find an env.sh file which has to be sourced
   * Now you can use the esrocos_* tools to start developing and esrocos project
+  
+## How to customize
 
+ESROCOS is a project distributed over several repositories (of which many can be found within this github organisation). The buildconf manifest constitutes a default layout for your local installation which can be tailored to your projects needs. ESROCOS packages are bundled in package sets which are arranged after their contents.
+
+![Image of ESROCOS packages](images/esrocos_packages.png)
