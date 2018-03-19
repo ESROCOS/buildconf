@@ -13,7 +13,8 @@ layout:
 
 #esrocos workflow tools
   - tools/workflow
-
+  - tools/config
+  
 #esrocos types
   - types/base
   - types/core
