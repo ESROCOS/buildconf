@@ -1,7 +1,7 @@
 package_sets:
 
 - github: ESROCOS/package_set-core
-  branch: lean_buildconf
+  branch: master
 
 - github: ESROCOS/package_set-universe
   branch: master
