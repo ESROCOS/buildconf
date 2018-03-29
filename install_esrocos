@@ -9,10 +9,7 @@ BOOTSTRAP_ARGS=
 
 mkdir -p ~/esrocos_workspace/.autoproj
 
-
 cd ~/esrocos_workspace
-
-# RUBY RUBY RUBY
 
 if test -n "$1" && test "$1" != "dev" && test "$1" != "localdev"; then
     RUBY=$1
@@ -22,17 +19,13 @@ fi
 
 set -e
 
-# MORE RUBY
-
 if ! which $RUBY > /dev/null 2>&1; then
-    echo "cannot find the ruby executable. On ubuntu, you should run"
-    echo "  sudo apt-get install ruby2.1"
+    echo "cannot find the ruby executable. On Ubuntu 16.04 and above, you should run"
+    echo "  sudo apt-get install ruby"
     echo "or on Ubuntu 14.04"
     echo "  sudo apt-get install ruby2.0"
     exit 1
 fi
-
-# EVEN MORE RUBY
 
 RUBY_VERSION_VALID=`$RUBY -e 'STDOUT.puts RUBY_VERSION.to_f >= 2.0'`
 
@@ -50,6 +43,14 @@ executable by passing it on the command line, as e.g.
 EOMSG
         exit 1
     fi
+fi
+
+# test if ruby-dev was installed
+if ! dpkg --get-selections | grep -q "ruby.*-dev"; then
+  echo -e "\e[93mRuby has been installed, but you might need the development headers, too. You should run"
+  echo -e "  \e[93msudo apt-get install ruby2.3-dev\e[39m" 
+else 
+  echo "ruby-dev installed"  
 fi
 
 # FINALLY NO MORE RUBY
