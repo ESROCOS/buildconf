@@ -9,7 +9,6 @@ BOOTSTRAP_ARGS=
 
 mkdir -p ~/esrocos_workspace/.autoproj
 
-
 cd ~/esrocos_workspace
 
 # RUBY RUBY RUBY
@@ -26,9 +25,7 @@ set -e
 
 if ! which $RUBY > /dev/null 2>&1; then
     echo "cannot find the ruby executable. On ubuntu, you should run"
-    echo "  sudo apt-get install ruby2.1"
-    echo "or on Ubuntu 14.04"
-    echo "  sudo apt-get install ruby2.0"
+    echo "  sudo apt-get install ruby2.3-dev"
     exit 1
 fi
 
@@ -50,6 +47,14 @@ executable by passing it on the command line, as e.g.
 EOMSG
         exit 1
     fi
+fi
+
+# test if ruby-dev was installed
+if [-e /usr/lib/ruby/include/ruby.h]; then
+
+else
+  echo "Ruby has been installed, but you might need the development headers, too. You should run"
+  echo "  sudo apt-get install ruby2.3-dev"
 fi
 
 # FINALLY NO MORE RUBY
