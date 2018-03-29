@@ -49,6 +49,7 @@ fi
 if ! dpkg --get-selections | grep -q "ruby.*-dev"; then
   echo -e "\e[93mRuby has been installed, but you might need the development headers, too. You should run"
   echo -e "  \e[93msudo apt-get install ruby2.3-dev\e[39m" 
+  exit 1
 else 
   echo "ruby-dev installed"  
 fi
