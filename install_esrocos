@@ -4,6 +4,9 @@ CONF_URL=https://github.com/ESROCOS/buildconf.git
 AUTOPROJ_CONFIG_URL=https://raw.githubusercontent.com/ESROCOS/buildconf/ci_integration/config.yml
 AUTOPROJ_BOOTSTRAP_URL=http://rock-robotics.org/master/autoproj_bootstrap
 
+#Which ESROCOS buildconf branch to check out
+BRANCH="master"
+
 RUBY=ruby
 BOOTSTRAP_ARGS=
 
@@ -97,7 +100,6 @@ done
 
 # DECIDES HOW TO DOWNLOAD STUFF
 
-BRANCH="master"
 
 until [ -n "$BRANCH" ]
 do
