@@ -1,15 +1,18 @@
 #! /bin/sh
 
-CONF_URL=${CONF_URL:=https://github.com/ESROCOS/buildconf.git}
+CONF_URL=https://github.com/ESROCOS/buildconf.git
+AUTOPROJ_CONFIG_URL=https://raw.githubusercontent.com/ESROCOS/buildconf/master/config.yml
+AUTOPROJ_BOOTSTRAP_URL=http://rock-robotics.org/master/autoproj_bootstrap
+
+#Which ESROCOS buildconf branch to check out
+BRANCH="master"
 
 RUBY=ruby
-AUTOPROJ_BOOTSTRAP_URL=http://rock-robotics.org/master/autoproj_bootstrap
 BOOTSTRAP_ARGS=
 
-mkdir -p ~/esrocos_workspace
-cd ~/esrocos_workspace
+mkdir -p ~/esrocos_workspace/.autoproj
 
-# RUBY RUBY RUBY
+cd ~/esrocos_workspace
 
 if test -n "$1" && test "$1" != "dev" && test "$1" != "localdev"; then
     RUBY=$1
@@ -19,17 +22,13 @@ fi
 
 set -e
 
-# MORE RUBY
-
 if ! which $RUBY > /dev/null 2>&1; then
-    echo "cannot find the ruby executable. On ubuntu, you should run"
-    echo "  sudo apt-get install ruby2.1"
+    echo "cannot find the ruby executable. On Ubuntu 16.04 and above, you should run"
+    echo "  sudo apt-get install ruby"
     echo "or on Ubuntu 14.04"
     echo "  sudo apt-get install ruby2.0"
     exit 1
 fi
-
-# EVEN MORE RUBY
 
 RUBY_VERSION_VALID=`$RUBY -e 'STDOUT.puts RUBY_VERSION.to_f >= 2.0'`
 
@@ -47,6 +46,15 @@ executable by passing it on the command line, as e.g.
 EOMSG
         exit 1
     fi
+fi
+
+# test if ruby-dev was installed
+if ! dpkg --get-selections | grep -q "ruby.*-dev"; then
+  echo -e "\e[93mRuby has been installed, but you might need the development headers, too. You should run"
+  echo -e "  \e[93msudo apt-get install ruby2.3-dev\e[39m" 
+  exit 1
+else 
+  echo "ruby-dev installed"  
 fi
 
 # FINALLY NO MORE RUBY
@@ -71,6 +79,9 @@ CONF_URL=${CONF_URL#*//}
 CONF_SITE=${CONF_URL%%/*}
 CONF_REPO=${CONF_URL#*/}
 
+GET_REPO=https://$CONF_SITE/$CONF_REPO
+PUSH_TO=GET_REPO
+
 until [ -n "$GET_REPO" ]
 do
     echo -n "Which protocol do you want to use to access $CONF_REPO on $CONF_SITE? [git|ssh|http] (default: ssh) "
@@ -89,7 +100,6 @@ done
 
 # DECIDES HOW TO DOWNLOAD STUFF
 
-BRANCH=""
 
 until [ -n "$BRANCH" ]
 do
@@ -105,7 +115,15 @@ done
 
 # DOWNLOAD AUTOPROJ STUFF
 
+cd ~/esrocos_workspace/.autoproj
+
+wget $AUTOPROJ_CONFIG_URL
+
+cd ..
+
 echo "checking out $BRANCH"
+
+export AUTOPROJ_BOOTSTRAP_IGNORE_NONEMPTY_DIR=1
 
 $RUBY autoproj_bootstrap $@ git $GET_REPO push_to=$PUSH_TO $BOOTSTRAP_ARGS branch=$BRANCH
 
@@ -115,4 +133,3 @@ if test "x$@" != "xlocaldev"; then
     echo "source env.sh"
     $SHELL -c '. $PWD/env.sh; autoproj update; autoproj osdeps; autoproj build'
 fi
-
