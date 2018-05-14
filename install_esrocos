@@ -5,7 +5,7 @@ AUTOPROJ_CONFIG_URL=https://raw.githubusercontent.com/ESROCOS/buildconf/master/c
 AUTOPROJ_BOOTSTRAP_URL=http://rock-robotics.org/master/autoproj_bootstrap
 
 #Which ESROCOS buildconf branch to check out
-if [ -n "$ESROCOS_BRANCH" ]; then
+if [[ -z $ESROCOS_BRANCH ]]; then
   ESROCOS_BRANCH="master"
 fi
 
