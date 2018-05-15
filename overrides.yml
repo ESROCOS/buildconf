@@ -1,1 +1,5 @@
-
+overrides:
+  - tools/config:
+    commit: ef41e6ad9a8310d9b14ff493243299334541eccf
+  - gui/vizkit3d_tastelib:
+    commit: 90314e6a154a88ecd0b3ff3220e0980b056e058c
