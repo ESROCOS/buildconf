@@ -5,7 +5,11 @@ AUTOPROJ_CONFIG_URL=https://raw.githubusercontent.com/ESROCOS/buildconf/master/c
 AUTOPROJ_BOOTSTRAP_URL=http://rock-robotics.org/master/autoproj_bootstrap
 
 #Which ESROCOS buildconf branch to check out
-BRANCH="master"
+if [[ -z $ESROCOS_BRANCH ]]; then
+  ESROCOS_BRANCH="master"
+fi
+
+echo "checking out branch: $ESROCOS_BRANCH"
 
 RUBY=ruby
 BOOTSTRAP_ARGS=
@@ -101,15 +105,15 @@ done
 # DECIDES HOW TO DOWNLOAD STUFF
 
 
-until [ -n "$BRANCH" ]
+until [ -n "$ESROCOS_BRANCH" ]
 do
     echo -n "Which version do you want to install? [master|stable|<other branch>] (default: master) "
     read ANSWER
     ANSWER=`echo $ANSWER | tr "[:upper:]" "[:lower:]"`
     case "$ANSWER" in
-        "master"|"") BRANCH="master" ;;
-        "stable") BRANCH="stable" ;;
-        *) BRANCH=$ANSWER ;;
+        "master"|"") ESROCOS_BRANCH="master" ;;
+        "stable") ESROCOS_BRANCH="stable" ;;
+        *) ESROCOS_BRANCH=$ANSWER ;;
     esac
 done
 
@@ -125,7 +129,7 @@ echo "checking out $BRANCH"
 
 export AUTOPROJ_BOOTSTRAP_IGNORE_NONEMPTY_DIR=1
 
-$RUBY autoproj_bootstrap $@ git $GET_REPO push_to=$PUSH_TO $BOOTSTRAP_ARGS branch=$BRANCH
+$RUBY autoproj_bootstrap $@ git $GET_REPO push_to=$PUSH_TO $BOOTSTRAP_ARGS branch=$ESROCOS_BRANCH
 
 # SOURCE Autoproj envs, update, resolve dependencies and build
 
