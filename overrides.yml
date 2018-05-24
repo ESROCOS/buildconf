@@ -1,5 +1,24 @@
-overrides:
+overrides:    
+#esrocos workflow tools
+#  - tools/workflow:  
   - tools/config:
     commit: ef41e6ad9a8310d9b14ff493243299334541eccf
-  - gui/vizkit3d_tastelib:
+  
+#esrocos types
+  - types/base: 
+    commit: d381fcc7c3233640d053016692ee24a3b01e7cdd
+#  - types/sensor_samples:
+  
+#support packages for the types
+  - types/base_support:
+    commit: 04fe823fce5e116a0cb114d3381fb31586d85f0c
+#  - types/sensor_samples_support:
+ 
+#ilk support
+#  - control/ilk-compiler:
+#  - control/ilk-generator:
+
+#GUI support
+ # - gui/robot_model:
+  - gui/vizkit3d_taste:
     commit: 90314e6a154a88ecd0b3ff3220e0980b056e058c
