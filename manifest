@@ -17,8 +17,8 @@ layout:
   
 #esrocos types
   - types/base
-  - types/core
-  - types/drivers
+# - types/core
+# - types/drivers
   - types/sensor_samples
   
 #support packages for the types
