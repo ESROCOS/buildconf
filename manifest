@@ -7,7 +7,7 @@ package_sets:
   branch: master
 
 - github: ESROCOS/package_set-external
-  branch: master
+  branch: external-orbital
   
 layout:
 
@@ -17,13 +17,13 @@ layout:
   
 #esrocos types
   - types/base
-# - types/core
-# - types/drivers
-# - types/sensor_samples
+  #- types/core
+  #- types/drivers
+  #- types/sensor_samples
   
 #support packages for the types
   - types/base_support
-# - types/sensor_samples_support
+  #- types/sensor_samples_support
  
 #ilk support
   - control/ilk-compiler
@@ -32,6 +32,11 @@ layout:
 #GUI support
   - gui/robot_model
   - gui/vizkit3d_taste
- 
-
-
+  
+# external
+  - external/dart
+  - external/omplapp
+  - external/omplapp/ompl
+  
+# tools
+  - tools/RoboticArm
