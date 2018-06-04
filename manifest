@@ -24,6 +24,9 @@ layout:
 #pus services library
   - tools/libpus
  
+#taste image transfer functions
+  - tools/imagetransfer
+ 
 #ilk support
   - control/ilk-compiler
   - control/ilk-generator
