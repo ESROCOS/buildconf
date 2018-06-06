@@ -1,6 +1,8 @@
 # build-conf
 In this repository all the neccessary files are stored to build an esrocos environment with autoproj
 
+## [![Build Status](https://esrocosbuild.hb.dfki.de:8443/buildStatus/icon?job=nightly_stable)](https://esrocosbuild.hb.dfki.de:8443/job/nightly_stable)
+
 ## How to install
 1. Download the install_esrocos script
    ```
