@@ -35,8 +35,9 @@ layout:
   
 # external
   - external/dart
+  - external/omplapp/ompl  
   - external/omplapp
-  - external/omplapp/ompl
+
   
 # tools
   - tools/RoboticArm
