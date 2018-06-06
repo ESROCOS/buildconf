@@ -28,4 +28,6 @@ require 'autoproj/gitorious'
 Autoproj.gitorious_server_configuration('GITHUB', 'github.com', :http_url => 'https://github.com')
 #Autoproj.gitorious_server_configuration('GITLAB', 'git.hb.dfki.de', :http_url => 'https://git.hb.dfki.de')
 
+# Add install/autoproj to Ruby library path
+Autobuild.env_push_path 'RUBYLIB', File.join(Autoproj.root_dir, 'install', 'autoproj')
 
