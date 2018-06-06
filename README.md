@@ -3,7 +3,7 @@ In this repository all the neccessary files are stored to build an esrocos envir
 
 ##
 build status:
-![Build Status](https://esrocosbuild.hb.dfki.de:8443/buildStatus/icon?job=nightly%20master)
+[![Build Status](https://esrocosbuild.hb.dfki.de:8443/buildStatus/icon?job=nightly master)](https://esrocosbuild.hb.dfki.de:8443/job/nightly master)
 
 ## How to install
 1. Download the install_esrocos script
