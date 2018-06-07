@@ -17,13 +17,10 @@ layout:
   
 #esrocos types
   - types/base
-  #- types/core
-  #- types/drivers
-  #- types/sensor_samples
+
   
 #support packages for the types
   - types/base_support
-  #- types/sensor_samples_support
  
 #ilk support
   - control/ilk-compiler
@@ -35,10 +32,11 @@ layout:
   
 # external
   - external/dart
+  - external/omplapp/ompl  
   - external/omplapp
-  - external/omplapp/ompl
+
   
 # tools
   - tools/RoboticArm
 
-# Hola
+
