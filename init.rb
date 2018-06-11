@@ -30,5 +30,5 @@ Autoproj.gitorious_server_configuration('SPASSGIT', 'spass-git-ext.gmv.com', :ht
 #Autoproj.gitorious_server_configuration('GITLAB', 'git.hb.dfki.de', :http_url => 'https://git.hb.dfki.de')
 
 # Add install/autoproj to Ruby library path
-Autobuild.env_push_path 'RUBYLIB', File.join(Autoproj.root_dir, 'install', 'autoproj')
+Autobuild.env_push_path 'RUBYLIB', File.join(Autoproj.root_dir, 'autoproj', 'esrocos')
 
