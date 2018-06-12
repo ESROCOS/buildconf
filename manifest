@@ -20,6 +20,12 @@ layout:
   
 #support packages for the types
   - types/base_support
+
+#pus services library
+  - tools/libpus
+ 
+#taste image transfer functions
+  - tools/imagetransfer
  
 #ilk support
   - control/ilk-compiler
