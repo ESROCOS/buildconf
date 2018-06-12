@@ -17,7 +17,6 @@ layout:
   
 #esrocos types
   - types/base
-
   
 #support packages for the types
   - types/base_support
@@ -34,9 +33,11 @@ layout:
   - external/dart
   - external/omplapp/ompl  
   - external/omplapp
-
   
 # tools
   - tools/RoboticArm
+
+# bundles
+  - bundles/u5_control
 
 
