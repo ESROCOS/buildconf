@@ -37,7 +37,7 @@ layout:
   
 # external
   - external/dart
-  - external/omplapp/ompl  
+  - external/ompl  
   - external/omplapp
   
 # tools
