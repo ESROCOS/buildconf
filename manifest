@@ -7,7 +7,7 @@ package_sets:
   branch: master
 
 - github: ESROCOS/package_set-external
-  branch: external-orbital
+  branch: master
   
 layout:
 
@@ -35,17 +35,5 @@ layout:
   - gui/robot_model
   - gui/vizkit3d_taste
   
-# external
-  - external/dart
-  
-# OMPL
-  - control/ompl  
-  - control/omplapp
-  
-# tools
-  - tools/RoboticArm
-
-# bundles
-  - bundles/u5_control
 
 
