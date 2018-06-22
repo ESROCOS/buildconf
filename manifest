@@ -35,5 +35,6 @@ layout:
   - gui/robot_model
   - gui/vizkit3d_taste
   
-
+#rock bridge
+  - tools/rock_bridge
 
