@@ -21,11 +21,17 @@ layout:
 #support packages for the types
   - types/base_support
 
+#esrocos types for ROS
+  - types/ros
+
 #pus services library
   - tools/libpus
  
 #taste image transfer functions
   - tools/imagetransfer
+
+#importing of ROS types to ASN.1
+  - tools/ros2asn1
  
 #ilk support
   - control/ilk-compiler
