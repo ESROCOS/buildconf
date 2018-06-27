@@ -7,7 +7,7 @@ package_sets:
   branch: master
 
 - github: ESROCOS/package_set-external
-  branch: master
+  branch: external-orbital
   
 layout:
 
@@ -44,3 +44,15 @@ layout:
 #rock bridge
   - tools/rock_bridge
 
+# external
+  - external/dart
+  
+# OMPL
+  - control/ompl  
+  - control/omplapp
+  
+# tools
+  - tools/RoboticArm
+
+# bundles
+  - bundles/u5_control

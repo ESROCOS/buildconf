@@ -8,8 +8,8 @@ manifest_source:
   type: git
   url: https://github.com/ESROCOS/buildconf.git
   push_to: https://github.com/ESROCOS/buildconf.git
-  branch: master
-GITHUB: http,ssh
+  branch: orbital
+GITHUB: http,http
 GITHUB_ROOT: https://github.com
 GITHUB_PUSH_ROOT: 'git@github.com:'
 GITHUB_PRIVATE_ROOT: 'git@github.com:'
@@ -26,7 +26,7 @@ typelib_cxx_loader: castxml
 USE_OCL: false
 rtt_target: gnulinux
 rtt_corba_implementation: omniorb
-SPASSGIT: http,ssh
+SPASSGIT: http,http
 SPASSGIT_ROOT: https://spass-git-ext.gmv.com
 SPASSGIT_PUSH_ROOT: 'git@spass-git-ext.gmv.com:'
 SPASSGIT_PRIVATE_ROOT: 'git@spass-git-ext.gmv.com:'
