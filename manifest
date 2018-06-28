@@ -52,7 +52,7 @@ layout:
   - control/omplapp
   
 # tools
-  - tools/RoboticArm
+  - tools/robotic_arm
 
 # bundles
-  - bundles/u5_control
+  - bundles/ur5_control
