@@ -42,8 +42,9 @@ layout:
   - gui/robot_model
   - gui/vizkit3d_taste
   
-#rock bridge
+#rock and ros bridges
   - tools/rock_bridge
+  - tools/ros_bridge
 
 # external
   - external/dart
