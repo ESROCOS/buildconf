@@ -18,5 +18,5 @@ overrides:
 
 #GUI support
  # - gui/robot_model:
-  - gui/vizkit3d_taste:
-    commit: efdc74064c57b8e5b84282e8cca380399491cd12
+#  - gui/vizkit3d_taste:
+#    commit: efdc74064c57b8e5b84282e8cca380399491cd12
