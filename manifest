@@ -60,3 +60,5 @@ layout:
   - bundles/ur5_control
   - bundles/orbital_test
   - bundles/cmm_control
+  - bundles/cmm_control_simple
+
