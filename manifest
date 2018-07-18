@@ -59,3 +59,4 @@ layout:
 # bundles
   - bundles/ur5_control
   - bundles/orbital_test
+  - bundles/cmm_control
