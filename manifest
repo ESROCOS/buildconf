@@ -33,6 +33,7 @@ layout:
 #importing of ROCK and ROS types to ASN.1
   - tools/rock2asn1
   - tools/ros2asn1
+  - tools/taste2rock
  
 #ilk support
   - control/ilk-compiler
