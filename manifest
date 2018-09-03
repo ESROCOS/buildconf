@@ -49,6 +49,7 @@ layout:
 
 # external
   - external/dart
+  - external/luarocks
   
 # OMPL
   - control/ompl  
