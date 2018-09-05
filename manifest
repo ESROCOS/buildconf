@@ -49,7 +49,6 @@ layout:
 
 # external
   - external/dart
-  - external/luarocks
   
 # OMPL
   - control/ompl  
@@ -63,4 +62,8 @@ layout:
   - bundles/orbital_test
   - bundles/cmm_control
   - bundles/cmm_control_simple
+  
+#bip components
+  - control/bip/monitor_joints
+  - control/bip/watchdog_timeout
 
