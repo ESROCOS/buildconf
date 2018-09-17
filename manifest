@@ -1,7 +1,7 @@
 package_sets:
 
 - github: ESROCOS/package_set-core
-  branch: master
+  branch: kul
 
 - github: ESROCOS/package_set-universe
   branch: master
@@ -35,8 +35,7 @@ layout:
   - tools/ros2asn1
  
 #ilk support
-  - control/ilk-compiler
-  - control/ilk-generator
+  - control/kin-gen
 
 #GUI support
   - gui/robot_model
