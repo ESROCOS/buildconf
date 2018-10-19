@@ -1,7 +1,4 @@
 package_sets:
-
-package_sets:
-
 - github: ESROCOS/package_set-core
   branch: kul
 
@@ -12,7 +9,6 @@ package_sets:
   branch: master
   
 layout:
-
 #esrocos workflow tools
   - tools/workflow
   - tools/config
