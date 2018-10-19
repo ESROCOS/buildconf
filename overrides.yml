@@ -5,16 +5,16 @@ overrides:
 #    commit: ef41e6ad9a8310d9b14ff493243299334541eccf
   
 #esrocos types
-  - types/base: 
-    commit: bbfed588093d50b46316de8e7eadfa869d39f02f
+#  - types/base: 
+#    commit: bbfed588093d50b46316de8e7eadfa869d39f02f
 #support packages for the types
-  - types/base_support:
-    commit: 64c922ca7f27437476d837359b60b7706bc05570
+#  - types/base_support:
+#    commit: 64c922ca7f27437476d837359b60b7706bc05570
 #ilk support
 #  - control/ilk-compiler:
 #  - control/ilk-generator:
 
 #GUI support
  # - gui/robot_model:
-  - gui/vizkit3d_taste:
-    commit: a3e27b64a3ceb43509755906341cee8115a17057
+#  - gui/vizkit3d_taste:
+#    commit: a3e27b64a3ceb43509755906341cee8115a17057
