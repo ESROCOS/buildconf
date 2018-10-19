@@ -1,15 +1,16 @@
 package_sets:
 
-  - github: ESROCOS/package_set-core
-    branch: kul
+- github: ESROCOS/package_set-core
+  branch: kul
 
-  - github: ESROCOS/package_set-universe
-    branch: master
+- github: ESROCOS/package_set-universe
+  branch: master
 
-  - github: ESROCOS/package_set-external
-    branch: master
+- github: ESROCOS/package_set-external
+  branch: master
   
 layout:
+
 #esrocos workflow tools
   - tools/workflow
   - tools/config
@@ -41,5 +42,5 @@ layout:
 #  - gui/vizkit3d_taste
   
 #rock bridge
-- tools/rock_bridge
+  - tools/rock_bridge
 
