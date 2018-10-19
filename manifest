@@ -1,7 +1,9 @@
 package_sets:
 
+package_sets:
+
 - github: ESROCOS/package_set-core
-  commit: 33ff3d6ea119970546a45d4522fe4cb5cdb43f84
+  branch: kul
 
 - github: ESROCOS/package_set-universe
   branch: master
@@ -20,14 +22,27 @@ layout:
   
 #support packages for the types
   - types/base_support
+
+#esrocos types for ROS
+  - types/ros
+
+#pus services library
+  - tools/libpus
+ 
+#taste image transfer functions
+#  - tools/imagetransfer
+
+#importing of ROCK and ROS types to ASN.1
+  - tools/rock2asn1
+  - tools/ros2asn1
  
 #ilk support
-#  - control/ilk-compiler
-#  - control/ilk-generator
+  - control/kin-gen
 
 #GUI support
-#  - gui/robot_model
+  - gui/robot_model
 #  - gui/vizkit3d_taste
- 
-
+  
+#rock bridge
+- tools/rock_bridge
 
