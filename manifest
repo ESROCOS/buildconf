@@ -25,10 +25,10 @@ layout:
   - types/ros
 
 #pus services library
-  - tools/libpus
+#  - tools/libpus
  
 #taste image transfer functions
-  - tools/imagetransfer
+#  - tools/imagetransfer
 
 #importing of ROCK and ROS types to ASN.1
   - tools/rock2asn1
@@ -39,8 +39,7 @@ layout:
 
 #GUI support
   - gui/robot_model
-  - gui/vizkit3d_taste
+#  - gui/vizkit3d_taste
   
 #rock bridge
-  - tools/rock_bridge
-
+- tools/rock_bridge
