@@ -42,4 +42,5 @@ layout:
 #  - gui/vizkit3d_taste
   
 #rock bridge
-- tools/rock_bridge
+  - tools/rock_bridge
+
