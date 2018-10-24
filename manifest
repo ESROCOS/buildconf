@@ -12,7 +12,7 @@ package_sets:
 layout:
 
 #esrocos workflow tools
-  - tools/workflow
+#  - tools/workflow
 #  - tools/config
   
 #esrocos types
