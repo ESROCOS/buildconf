@@ -12,17 +12,17 @@ package_sets:
 layout:
 
 #esrocos workflow tools
-#  - tools/workflow
-#  - tools/config
+  - tools/workflow
+  - tools/config
   
 #esrocos types
-#  - types/base
+  - types/base
   
 #support packages for the types
-#  - types/base_support
+  - types/base_support
 
 #esrocos types for ROS
-#  - types/ros
+  - types/ros
 
 #pus services library
   - tools/libpus
@@ -31,16 +31,16 @@ layout:
   - tools/imagetransfer
 
 #importing of ROCK and ROS types to ASN.1
-#  - tools/rock2asn1
-#  - tools/ros2asn1
+  - tools/rock2asn1
+  - tools/ros2asn1
  
 #ilk support
-#  - control/kin-gen
+  - control/kin-gen
 
 #GUI support
-#  - gui/robot_model
+  - gui/robot_model
   - gui/vizkit3d_taste
   
 #rock bridge
-#  - tools/rock_bridge
+  - tools/rock_bridge
 
