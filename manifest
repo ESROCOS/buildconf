@@ -28,7 +28,7 @@ layout:
   - tools/libpus
  
 #taste image transfer functions
-  - tools/imagetransfer
+#  - tools/imagetransfer
 
 #importing of ROCK and ROS types to ASN.1
 #  - tools/rock2asn1
