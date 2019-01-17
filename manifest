@@ -22,26 +22,26 @@ layout:
   - types/base_support
 
 #esrocos types for ROS
-  - types/ros
+#  - types/ros
 
 #pus services library
-  - tools/libpus
+#  - tools/libpus
  
 #taste image transfer functions
-  - tools/imagetransfer
+ # - tools/imagetransfer
 
 #importing of ROCK and ROS types to ASN.1
-  - tools/rock2asn1
-  - tools/ros2asn1
+ # - tools/rock2asn1
+ # - tools/ros2asn1
  
 #ilk support
-  - control/kin-gen
+ # - control/kin-gen
 
 #GUI support
-  - gui/robot_model
-  - gui/vizkit3d_taste
+#  - gui/robot_model
+#  - gui/vizkit3d_taste
   
 #rock bridge
   - tools/ros_bridge
-  - tools/rock_bridge
+#  - tools/rock_bridge
 
