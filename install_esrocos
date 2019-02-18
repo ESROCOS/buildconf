@@ -6,7 +6,7 @@ AUTOPROJ_BOOTSTRAP_URL=https://rock-robotics.org/master/autoproj_bootstrap
 
 #Which ESROCOS buildconf branch to check out
 if [[ -z $ESROCOS_BRANCH ]]; then
-  ESROCOS_BRANCH="master"
+  ESROCOS_BRANCH="next-release"
 fi
 
 echo "checking out branch: $ESROCOS_BRANCH"
