@@ -1,5 +1,5 @@
 ---
-ruby_executable: "/usr/bin/ruby2.3"
+ruby_executable: "/usr/bin/ruby2.5"
 gems_install_path: /home/esrocos/.autoproj/gems"
 prefer_indep_over_os_packages: false
 osdeps_mode: all
