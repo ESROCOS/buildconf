@@ -8,7 +8,7 @@ manifest_source:
   type: git
   url: https://github.com/ESROCOS/buildconf.git
   push_to: https://github.com/ESROCOS/buildconf.git
-  branch: master
+  branch: next-release
 GITHUB: http,http
 GITHUB_ROOT: https://github.com
 GITHUB_PUSH_ROOT: 'git@github.com:'
