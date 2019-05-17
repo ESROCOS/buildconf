@@ -12,14 +12,14 @@ package_sets:
 layout:
 
 #esrocos workflow tools
-#  - tools/workflow
+  - tools/workflow
   - tools/config
   
 #esrocos types
-#  - types/base
+  - types/base
   
 #support packages for the types
-#  - types/base_support
+  - types/base_support
 
 #esrocos types for ROS
 #  - types/ros
