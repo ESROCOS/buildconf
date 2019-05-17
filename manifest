@@ -19,7 +19,7 @@ layout:
   - types/base
   
 #support packages for the types
-  - types/base_support
+#  - types/base_support
 
 #esrocos types for ROS
 #  - types/ros
