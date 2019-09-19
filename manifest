@@ -1,19 +1,37 @@
 package_sets:
 
+# Package sets from GitHub
+## core package
+#- github: ESROCOS/package_set-core
+#  branch: master
+#
+## rock dependencies
+#- github: ESROCOS/package_set-dependencies
+#  branch: master
+#
+# contributed packages
+#- github: ESROCOS/package_set-universe
+#  branch: master
+#
+## external packages
+#- github: ESROCOS/package_set-external
+#  branch: master
+  
+# Package sets from GMV's GitLab
 # core package
-- github: ESROCOS/package_set-core
+- gmvgit: ESROCOS/package_set-core
   branch: master
 
 # rock dependencies
-- github: ESROCOS/package_set-dependencies
+- gmvgit: ESROCOS/package_set-dependencies
   branch: master
 
 # contributed packages
-- github: ESROCOS/package_set-universe
+- gmvgit: ESROCOS/package_set-universe
   branch: master
 
 # external packages
-- github: ESROCOS/package_set-external
+- gmvgit: ESROCOS/package_set-external
   branch: master
   
 layout:
