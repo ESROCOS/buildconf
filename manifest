@@ -1,47 +1,51 @@
 package_sets:
 
+# core package
 - github: ESROCOS/package_set-core
-  branch: kul
+  branch: master
 
+# rock dependencies
+- github: ESROCOS/package_set-dependencies
+  branch: master
+
+# contributed packages
 - github: ESROCOS/package_set-universe
   branch: master
 
+# external packages
 - github: ESROCOS/package_set-external
   branch: master
   
 layout:
 
-#esrocos workflow tools
-  - tools/workflow
-  - tools/config
-  
-#esrocos types
-  - types/base
-  
-#support packages for the types
-  - types/base_support
+    #ilk support
+    - control/kin-gen
 
-#esrocos types for ROS
-  - types/ros
+    #gui widgets for taste
+#    - gui/robot_model --> delete??
+    - gui/vizkit3d_taste
 
-#pus services library
-  - tools/libpus
+    #esrocos build scripts
+    - tools/config
+  
+    #pus services library
+    - tools/libpus
  
-#taste image transfer functions
-  - tools/imagetransfer
+    #type type importa and bridge generation for rock and ros
+    - tools/rock2asn1
+    - tools/rock_bridge
+    - tools/ros2asn1
+    - tools/ros_bridge
 
-#importing of ROCK and ROS types to ASN.1
-  - tools/rock2asn1
-  - tools/ros2asn1
- 
-#ilk support
-  - control/kin-gen
+    #esrocos user workflow scripts
+    - tools/workflow
 
-#GUI support
-  - gui/robot_model
-  - gui/vizkit3d_taste
+    #esrocos types
+    - types/base
   
-#rock bridge
-  - tools/ros_bridge
-  - tools/rock_bridge
+    #support packages for the types (rock-asn.1 conversions)
+    - types/base_support
+
+    #esrocos types for ROS
+    - types/ros
 

@@ -1,32 +1,35 @@
 ---
-ruby_executable: "/usr/bin/ruby2.3"
-gems_install_path: "/home/taste/.autoproj/gems"
-prefer_indep_over_os_packages: false
-osdeps_mode: all
-reused_autoproj_installations: []
 manifest_source:
   type: git
-  url: https://github.com/ESROCOS/buildconf.git
-  push_to: https://github.com/ESROCOS/buildconf.git
-  branch: master
-GITHUB: http,ssh
+  # URLs for GitHub
+  #url: https://github.com/ESROCOS/buildconf.git
+  #push_to: https://github.com/ESROCOS/buildconf.git
+  #branch: master
+  # URLs for GMV's Git
+  url: https://spass-git-ext.gmv.com/OBA/MOSAR/ESROCOS/buildconf.git
+  push_to: https://spass-git-ext.gmv.com/OBA/MOSAR/ESROCOS/buildconf.git
+  branch: mgma-devel
+
+GITHUB: http,http
 GITHUB_ROOT: https://github.com
-GITHUB_PUSH_ROOT: 'git@github.com:'
-GITHUB_PRIVATE_ROOT: 'git@github.com:'
-operating_system:
-- - debian
-- - '9'
-  - stretch
-  - default
+GITHUB_PUSH_ROOT: 'https://github.com:'
+GITHUB_PRIVATE_ROOT: 'https://github.com:'
+
+GMVGIT: http,http
+GMVGIT_ROOT: https://spass-git-ext.gmv.com
+GMVGIT_PUSH_ROOT: 'https://spass-git-ext.gmv.com:'
+GMVGIT_PRIVATE_ROOT: 'https://spass-git-ext.gmv.com:'
+
 ROCK_SELECTED_FLAVOR: master
 ROCK_FLAVOR: master
 ROCK_BRANCH: master
+
+prefer_indep_over_os_packages: false
+osdeps_mode: all
+reused_autoproj_installations: []
 cxx11: true
 typelib_cxx_loader: castxml
 USE_OCL: false
 rtt_target: gnulinux
 rtt_corba_implementation: omniorb
-SPASSGIT: http,ssh
-SPASSGIT_ROOT: https://spass-git-ext.gmv.com
-SPASSGIT_PUSH_ROOT: 'git@spass-git-ext.gmv.com:'
-SPASSGIT_PRIVATE_ROOT: 'git@spass-git-ext.gmv.com:'
+apt_dpkg_update: false
