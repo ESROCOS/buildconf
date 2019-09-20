@@ -19,19 +19,19 @@ package_sets:
   
 # Package sets from GMV's GitLab
 # core package
-- gmvgit: ESROCOS/package_set-core
+- gmvgit: OBA/MOSAR/ESROCOS/package_set-core
   branch: master
 
 # rock dependencies
-- gmvgit: ESROCOS/package_set-dependencies
+- gmvgit: OBA/MOSAR/ESROCOS/package_set-dependencies
   branch: master
 
 # contributed packages
-- gmvgit: ESROCOS/package_set-universe
+- gmvgit: OBA/MOSAR/ESROCOS/package_set-universe
   branch: master
 
 # external packages
-- gmvgit: ESROCOS/package_set-external
+- gmvgit: OBA/MOSAR/ESROCOS/package_set-external
   branch: master
   
 layout:
