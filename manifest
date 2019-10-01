@@ -66,4 +66,9 @@ layout:
 
     #esrocos types for ROS
     - types/ros
+    
+    #tutorials
+    - tutorial/driver:
+    - tutorial/cam_capture:
+    - tutorial/plex:
 
