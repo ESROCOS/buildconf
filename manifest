@@ -69,6 +69,4 @@ layout:
     
     #tutorials
     - tutorial/driver:
-    - tutorial/cam_capture:
-    - tutorial/plex:
 
