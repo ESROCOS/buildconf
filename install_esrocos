@@ -28,7 +28,7 @@ fi
 
 #Which ESROCOS buildconf branch to check out 
 if [[ -z $ESROCOS_BRANCH ]]; then
-  ESROCOS_BRANCH="set-MOSAR"
+  ESROCOS_BRANCH="master"
 fi
 
 echo "checking out branch: $ESROCOS_BRANCH"
