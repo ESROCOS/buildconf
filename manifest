@@ -34,6 +34,10 @@ package_sets:
 - gmvgit: PERASPERA/MOSAR/ESROCOS/package_set-external
   branch: master
   
+# mosar packages
+- gmvgit: PERASPERA/MOSAR/ESROCOS/package_set-mosar
+  branch: master
+  
 layout:
 
     #ilk support
