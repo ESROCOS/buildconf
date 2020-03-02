@@ -40,7 +40,6 @@ layout:
     - control/kin-gen
 
     #gui widgets for taste
-#    - gui/robot_model --> delete??
     - gui/vizkit3d_taste
 
     #esrocos build scripts
