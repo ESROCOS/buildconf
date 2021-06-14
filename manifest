@@ -1,26 +1,9 @@
 package_sets:
 
-# Package sets from GitHub
-## core package
-#- github: ESROCOS/package_set-core
-#  branch: master
-#
-## rock dependencies
-#- github: ESROCOS/package_set-dependencies
-#  branch: master
-#
-# contributed packages
-#- github: ESROCOS/package_set-universe
-#  branch: master
-#
-## external packages
-#- github: ESROCOS/package_set-external
-#  branch: master
-  
 # Package sets from GMV's GitLab
 # core package
 - gmvgit: PERASPERA/MOSAR/ESROCOS/package_set-core
-  branch: master
+  branch: kazoo
 
 # rock dependencies
 - gmvgit: PERASPERA/MOSAR/ESROCOS/package_set-dependencies
@@ -34,10 +17,14 @@ package_sets:
 - gmvgit: PERASPERA/MOSAR/ESROCOS/package_set-external
   branch: master
   
+# mosar packages
+- gmvgit: PERASPERA/MOSAR/ESROCOS/package_set-mosar
+  branch: master
+  
 layout:
 
     #ilk support
-    - control/kin-gen
+    #- control/kin-gen
 
     #gui widgets for taste
     - gui/vizkit3d_taste
@@ -66,6 +53,9 @@ layout:
     #esrocos types for ROS
     - types/ros
     
-    #tutorials
-    - tutorial/driver
+	#i3ds framework
+    - tools/i3ds_framework
+    
+    #i3ds interfaces
+    - tools/i3ds_interfaces
 
