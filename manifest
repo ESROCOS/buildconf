@@ -7,7 +7,7 @@ package_sets:
 
 # rock dependencies
 - gmvgit: PERASPERA/MOSAR/ESROCOS/package_set-dependencies
-  branch: master
+  branch: tested
 
 # contributed packages
 - gmvgit: PERASPERA/MOSAR/ESROCOS/package_set-universe
