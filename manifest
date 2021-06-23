@@ -18,8 +18,8 @@ package_sets:
   branch: master
   
 # mosar packages
-- gmvgit: PERASPERA/MOSAR/ESROCOS/package_set-mosar
-  branch: master
+#- gmvgit: PERASPERA/MOSAR/ESROCOS/package_set-mosar
+#  branch: master
   
 layout:
 
