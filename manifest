@@ -3,11 +3,11 @@ package_sets:
 # Package sets from GMV's GitLab
 # core package
 - gmvgit: PERASPERA/MOSAR/ESROCOS/package_set-core
-  branch: kazoo
+  branch: master
 
 # rock dependencies
 - gmvgit: PERASPERA/MOSAR/ESROCOS/package_set-dependencies
-  branch: tested
+  branch: master
 
 # contributed packages
 - gmvgit: PERASPERA/MOSAR/ESROCOS/package_set-universe
