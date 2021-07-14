@@ -6,8 +6,8 @@ manifest_source:
   #push_to: https://github.com/ESROCOS/buildconf.git
   #branch: master
   # URLs for GMV's Git
-  url: https://spass-git-ext.gmv.com/PERASPERA/MOSAR/ESROCOS/buildconf.git
-  push_to: https://spass-git-ext.gmv.com/PERASPERA/MOSAR/ESROCOS/buildconf.git
+  url: https://github.com/ESROCOS/buildconf.git
+  push_to: https://github.com/ESROCOS/buildconf.git
   branch: master
 
 GITHUB: http,http
