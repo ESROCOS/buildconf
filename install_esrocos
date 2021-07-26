@@ -7,7 +7,7 @@
 #DOWNLOAD_AUTOPROJ_CONFIG=true
 
 # URLs to install from GMV's GitLab
-CONF_URL=https://spass-git-ext.gmv.com/PERASPERA/MOSAR/ESROCOS/buildconf
+CONF_URL=https://github.com/ESROCOS/buildconf.git
 AUTOPROJ_CONFIG_URL=$(realpath $(dirname $0))/config.yml
 AUTOPROJ_BOOTSTRAP_URL=$(realpath $(dirname $0))/autoproj_bootstrap
 DOWNLOAD_AUTOPROJ_CONFIG=false
