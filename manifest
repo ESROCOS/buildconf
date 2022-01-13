@@ -3,7 +3,7 @@ package_sets:
 # Package sets from GMV's GitLab
 # core package
 - github: ESROCOS/package_set-core
-  branch: master
+  branch: ubuntu20
 
 # rock dependencies
 - github: ESROCOS/package_set-dependencies
