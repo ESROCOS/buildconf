@@ -7,7 +7,7 @@ package_sets:
 
 # rock dependencies
 - github: ESROCOS/package_set-dependencies
-  branch: master
+  branch: ubuntu20
 
 # contributed packages
 - github: ESROCOS/package_set-universe
