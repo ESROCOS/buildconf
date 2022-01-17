@@ -12,6 +12,18 @@ AUTOPROJ_CONFIG_URL=$(realpath $(dirname $0))/config.yml
 AUTOPROJ_BOOTSTRAP_URL=$(realpath $(dirname $0))/autoproj_bootstrap
 DOWNLOAD_AUTOPROJ_CONFIG=false
 
+#Check linux distribution
+if [ -z "$VERSION" ] ; then
+    VERSION="$(lsb_release -d)"
+    if [ -f /.dockerenv ] ; then
+        VERSION=${VERSION}-Dockerized
+    fi
+    echo "Version detected: ${VERSION}"
+else
+    echo "Version forced: ${VERSION}"
+fi
+
+
 # DOWNLOAD_AUTOPROJ_CONFIG indicates that the autoproj files can be downloaded from a public repo
 # When using a private repo, the files must be copied from a local path instead
 
@@ -28,7 +40,12 @@ fi
 
 #Which ESROCOS buildconf branch to check out 
 if [[ -z $ESROCOS_BRANCH ]]; then
-  ESROCOS_BRANCH="ubuntu20"
+    case "$VERSION" in *Ubuntu*20.04*)
+        ESROCOS_BRANCH="ubuntu20"
+    ;;
+    *)
+        ESROCOS_BRANCH="master"
+    esac    
 fi
 
 echo "checking out branch: $ESROCOS_BRANCH"
@@ -43,11 +60,28 @@ mkdir -p ~/esrocos_workspace/.autoproj
 cd ~/esrocos_workspace
 
 if ! which $RUBY > /dev/null 2>&1; then
-    echo "cannot find the ruby executable. On Ubuntu 16.04 and above, you should run"
-    echo "  sudo apt-get install ruby"
-    echo "or on Ubuntu 14.04"
-    echo "  sudo apt-get install ruby2.0"
-    exit 1
+    case "$VERSION" in *Ubuntu*20.04*)
+        echo "Could not find the ruby executable. Installing ruby2.5 through rvm..."
+        {
+            curl -sSL https://rvm.io/mpapis.asc | gpg --import -
+            curl -sSL https://rvm.io/pkuczynski.asc | gpg --import - 
+            curl -sSL https://get.rvm.io | bash -s stable
+            source ~/.bashrc
+            source ~/.rvm/scripts/rvm
+            rvm install 2.5
+
+        } || {
+            echo "Ruby installation failed. Please install manually and run this script again."
+            exit 1
+        }
+    ;;
+    *)
+        echo "cannot find the ruby executable. On Ubuntu 16.04 and above, you should run"
+        echo "  sudo apt-get install ruby"
+        echo "or on Ubuntu 14.04"
+        echo "  sudo apt-get install ruby2.0"
+        exit 1
+    esac
 fi
 
 RUBY_VERSION_VALID=`$RUBY -e 'STDOUT.puts RUBY_VERSION.to_f >= 2.0'`
@@ -68,15 +102,20 @@ EOMSG
     fi
 fi
 
-# test if ruby-dev was installed
-if ! dpkg --get-selections | grep -q "ruby.*-dev"; then
-  echo -e "\e[93mRuby has been installed, but you might need the development headers, too. You should run"
-  echo -e "  \e[93msudo apt-get install ruby2.3-dev\e[39m" 
-  exit 1
-else 
-  echo "ruby-dev installed"  
-fi
-
+case "$VERSION" in *Ubuntu*20.04*)
+    # add rock core repo to find necessary packages
+    echo | sudo add-apt-repository ppa:rock-core/qt4
+;;
+*)
+    # test if ruby-dev was installed
+    if ! dpkg --get-selections | grep -q "ruby.*-dev"; then
+        echo -e "\e[93mRuby has been installed, but you might need the development headers, too. You should run"
+        echo -e "  \e[93msudo apt-get install ruby2.3-dev\e[39m" 
+        exit 1
+    else 
+        echo "ruby-dev installed"  
+    fi
+esac 
 # FINALLY NO MORE RUBY
 # DOWNLOAD AUTOPROJ
 
