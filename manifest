@@ -15,7 +15,7 @@ package_sets:
 
 # external packages
 - github: ESROCOS/package_set-external
-  branch: master
+  branch: ubuntu20
   
 layout:
 
